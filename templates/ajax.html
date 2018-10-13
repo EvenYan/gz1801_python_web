@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax测试</title>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script>
+        $(function () {
+            $("#word").keyup(function () {
+                $.ajax({
+                    url: 'userinfo',
+                    type: 'get',
+                    dataType: 'json',
+                    success:function (data) {
+                        alert(data['name'])
+                    },
+                    error:function (data) {
+                        alert("error")
+                    }
+                })
+            })
+        })
+    </script>
+
+</head>
+<body>
+<input type="text" id="word">
+<p id="txt"></p>
+
+</body>
+</html>

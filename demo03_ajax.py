@@ -3,12 +3,16 @@
 """
 # import json
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
+def index():
+    return render_template("ajax.html")
+
+@app.route('/userinfo')
 def get_user_info():
     data = {"name": "Alice", "height": 180}
     return jsonify(data)

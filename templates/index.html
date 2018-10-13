@@ -5,7 +5,13 @@
     <title>首页</title>
 </head>
 <body>
-    <h1>这是标题</h1>
-    {{ user['name'] }}
+    {{ user_list[1] }}
+    {{ user_dic['name'] }}
+    {% for user in user_list %}
+        <li>{{ user }}</li>
+    {% endfor %}
+
+    {{ user_dic['name'] }}
+    {{ user_dic['age'] }}
 </body>
 </html>
